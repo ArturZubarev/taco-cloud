@@ -1,10 +1,12 @@
 package org.zubarev.tacocloud.repository;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.Repository;
 import org.zubarev.tacocloud.model.Ingredient;
 
 import java.util.Optional;
 
-public interface IngredientRepository {
+public interface IngredientRepository extends CrudRepository<Ingredient,String> {
     /**
      * репозиторий для хранения объектов Ingredient должен поддер-
      * живать следующие операции:
@@ -12,10 +14,5 @@ public interface IngredientRepository {
      * получение одного ингредиента по идентификатору;
      * сохранение объекта Ingredient.
      */
-
-    Iterable<Ingredient> findAll();
-
-    Optional<Ingredient> findById(String id);
-
-    Ingredient save(Ingredient ingredient);
 }
+
