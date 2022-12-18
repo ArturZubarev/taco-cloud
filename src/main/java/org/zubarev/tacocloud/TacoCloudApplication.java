@@ -3,11 +3,12 @@ package org.zubarev.tacocloud;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.zubarev.tacocloud.model.Ingredient;
 import org.zubarev.tacocloud.repository.IngredientRepository;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class TacoCloudApplication {
 
     public static void main(String[] args) {
