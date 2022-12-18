@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.zubarev.tacocloud.model.TacoOrder;
+import org.zubarev.tacocloud.repository.OrderRepository;
 
 @Controller
 @Slf4j
 @RequestMapping("/orders")
 @SessionAttributes("tacoOrder")
 public class OrderController {
+    private OrderRepository orderRepository;
     @GetMapping("/current")
     public String orderForm(){
         return "orderForm";
